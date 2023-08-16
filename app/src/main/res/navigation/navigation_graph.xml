@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/artRecyclerView">
+
+    <fragment
+        android:id="@+id/addArt"
+        android:name="com.vustuntas.artbookfragment.view.AddArt"
+        android:label="fragment_add_art"
+        tools:layout="@layout/fragment_add_art" >
+        <action
+            android:id="@+id/action_addArt_to_artRecyclerView"
+            app:destination="@id/artRecyclerView" />
+        <argument
+            android:name="destination"
+            app:argType="string" />
+        <argument
+            android:name="artId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/artRecyclerView"
+        android:name="com.vustuntas.artbookfragment.view.ArtRecyclerView"
+        android:label="fragment_art_recycler_view"
+        tools:layout="@layout/fragment_art_recycler_view" >
+        <action
+            android:id="@+id/action_artRecyclerView_to_addArt"
+            app:destination="@id/addArt" />
+    </fragment>
+</navigation>
